@@ -1,4 +1,5 @@
 <?php
+
     $suma = $_GET['x']+$_GET['y'];
     $resta = $_GET['x']-$_GET['y'];
     $multiplicacio = $_GET['x']*$_GET['y'];
