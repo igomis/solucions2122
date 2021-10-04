@@ -104,5 +104,5 @@ function showError($nomCamp,$errors){
 
 function loadView($vista,$params){
     extract($params);
-    require_once($_SERVER['DOCUMENT_ROOT'].'/../views/'."$vista.view.php");
+    require($_SERVER['DOCUMENT_ROOT'].'/../views/'."$vista.view.php");
 }

@@ -18,6 +18,7 @@
     <li>2.A.<a href="formCalculadora.php">Fomulari Calculador</a></li>
     <li>2.B.<a href="formulari.php">Fomulari Persona</a></li>
     <li>2.C.<a href="importar.php">Importar planter</a></li>
+    <li>3.A.<a href="plantilla.php">Vore planter</a></li>
 </ul>
 </body>
 </html>
