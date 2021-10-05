@@ -2,6 +2,7 @@
     require_once('../kernel.php');
     use App\Player;
     use App\Team;
+    use App\Trainer;
     $fitxer = "../dades/EjemploPlantillas.csv";
 
     $team = new Team('At.Madrid');
@@ -24,5 +25,7 @@
             $jugador[6], $jugador[9], $jugador[11],$jugador[10],$jugador[17],$jugador[12],$jugador[16],$jugador[18],$jugador[19]);
             $team->signPlayer($player);
     }
+    $team->signPlayer(new Trainer('Antic','15/02/1959','Serbia','Entrenador'));
+    $team->signPlayer(new Trainer('Manolo','01/01/1968','España','Utillero'));
 
     $team->render();
