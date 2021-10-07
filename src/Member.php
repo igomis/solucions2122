@@ -17,11 +17,6 @@ abstract class Member
      * @param $name
      * @param $birthday
      * @param $country
-     * @param $dorsal
-     * @param $position
-     * @param $goals
-     * @param $matches
-     * @param $minutes
      * @param $yellowCards
      * @param $redCards
      */

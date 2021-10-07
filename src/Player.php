@@ -5,6 +5,7 @@ namespace App;
 
 
 class Player extends Member{
+
     private $dorsal;
     private $position;
     private $goals;
