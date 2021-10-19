@@ -106,3 +106,22 @@ function loadView($vista,$params){
     extract($params);
     require($_SERVER['DOCUMENT_ROOT'].'/../views/'."$vista.view.php");
 }
+
+function insert($table,$fields) {
+    $fieldsValue = implode(" , :",array_keys($fields));
+    $fieldsName = implode(",",array_keys($fields));
+    $sentence = "insert into %s (%s) values (:%s )";
+    return sprintf($sentence,$table,$fieldsName,$fieldsValue);
+}
+
+function update($table,$fields,$primaryKey) {
+    $fieldsValue = implode(" , :",array_keys($fields));
+    $fieldsName = implode(",",array_keys($fields));
+    $sentence = "UPDATE $table SET ";
+    foreach ($fields as $key => $value){
+        $sentence .= "$key = :$key,";
+    }
+    $sentence = trim($sentence,',');
+    $sentence .= " WHERE $primaryKey = :id";
+    return $sentence;
+}

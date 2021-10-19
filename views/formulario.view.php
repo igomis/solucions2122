@@ -14,6 +14,12 @@
 </header>
 <form method="POST" action="formulari.php" enctype="multipart/form-data">
     <div class="form-group">
+        <label for="name">Dni:</label>
+        <input name="dni" type="text" class="form-control <?= isValidClass('dni',$errors) ?>" id="dni" aria-describedby="dniHelp" placeholder="Enter DNI" value="<?= $old_dni??'' ?>">
+        <small id="dniHelp" class="form-text text-muted">El teu DNI</small>
+        <?= showError('dni',$errors) ?>
+    </div>
+    <div class="form-group">
         <label for="name">Nom:</label>
         <input name="name" type="text" class="form-control <?= isValidClass('name',$errors) ?>" id="title" aria-describedby="titleHelp" placeholder="Enter Name" value="<?= $old_name??'' ?>">
         <small id="nameHelp" class="form-text text-muted">El teu nom</small>

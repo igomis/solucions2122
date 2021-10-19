@@ -19,6 +19,7 @@
     <li>2.B.<a href="formulari.php">Fomulari Persona</a></li>
     <li>2.C.<a href="importar.php">Importar planter</a></li>
     <li>3.A.<a href="plantilla.php">Vore planter</a></li>
+    <li>4.A.<a href="bd.php">Connexio BD</a></li>
 </ul>
 </body>
 </html>

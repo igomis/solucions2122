@@ -5,6 +5,7 @@ $errors=[];
 
 if (isPost() && cfsr()) {
     // validació camps
+    $dni = isRequired('dni',$errors);
     $name = isRequired('name', $errors);
     $data = isBefore('data', $errors);
     $hobby = $_POST['hobby'];
@@ -12,6 +13,8 @@ if (isPost() && cfsr()) {
     $fitxer = saveFile('image','image/png','fotos',$errors);
 
     if (!count($errors)){
+        $query = require_once('../bootstrap.php');
+        $query->insert('alumnes',compact('dni','name','data','hobby','genre','fitxer'));
         loadView('resFormulario',compact('name','data','hobby','genre','fitxer','hobbies'));
         die();
     }
