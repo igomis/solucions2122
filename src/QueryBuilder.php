@@ -64,6 +64,15 @@ class QueryBuilder
         $stpdo->execute();
     }
 
+    public function login($table,$email,$password){
+        $stpdo = $this->conn->prepare("SELECT * FROM $table WHERE email = :email");
+        $stpdo->bindValue(":email",$email);
+        $stpdo->execute();
+        $user = $stpdo->fetch(\PDO::FETCH_OBJ);
+        if (password_verify($password, $user->password)) return $user;
+        return null;
+    }
+
 /*
 
 

@@ -4,7 +4,12 @@ include_once ('../kernel.php');
 use App\Ofegat;
 use App\Paraula;
 
+if (!isset($_SESSION['user'])) {
 
+    header('Location:/login.php');
+
+    die();
+}
 $errors = [];
 $succes = 0;
 $ofegat = isset($_SESSION['ofegat'])
