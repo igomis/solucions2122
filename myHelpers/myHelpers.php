@@ -22,6 +22,22 @@ function isRequired($nomCamp,&$errors){
     }
 }
 
+function is_letter($nomCamp,&$errors){
+    
+    if (!empty($_POST[$nomCamp])) {
+          $letter = strtoupper(trim(htmlspecialchars($_POST[$nomCamp])));
+          if ((strlen($letter)>1)||$letter<'A'||$letter>'Z') {
+              $errors[$nomCamp] ="El $nomCamp no és una lletra";
+              return null;
+          }
+          return $letter;
+    }
+    else {
+        $errors[$nomCamp] = "El $nomCamp és requerit";
+        return null;
+    }
+}
+
 function isBetween($nomCamp,&$errors,$min=-99999999,$max=9999999){
     if (!empty($_POST[$nomCamp]) && is_numeric($_POST[$nomCamp])) {
         if ($_POST[$nomCamp]<$min || $_POST[$nomCamp]> $max){

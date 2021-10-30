@@ -1,17 +1,17 @@
 <?php
 // load filp/whoops
-dd('s');
+session_start();
 require_once(dirname(__FILE__) . "/vendor/autoload.php");
 
-//use Dotenv\Dotenv;
+use Dotenv\Dotenv;
 use Whoops\Run;
 use Whoops\Handler\PrettyPageHandler;
 
 $whoops = new Run;
 $whoops->pushHandler(new PrettyPageHandler);
 $whoops->register();
-//$dotenv = Dotenv::createImmutable(__DIR__);
-//$dotenv->load();
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // routes
 $route_views = $_SERVER['DOCUMENT_ROOT'].'/../views/';

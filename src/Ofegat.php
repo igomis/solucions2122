@@ -7,7 +7,6 @@ namespace App;
 class Ofegat
 {
     protected $paraula;
-    protected $vocal;
     protected $letters;
 
     /**

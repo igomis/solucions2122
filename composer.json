@@ -13,6 +13,6 @@
             "App\\": "src/"
         },
         "files": [
-            "helpers/myHelpers.php"]
+            "myHelpers/myHelpers.php"]
     }
 }
