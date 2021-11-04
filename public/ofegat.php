@@ -5,13 +5,11 @@ use App\Ofegat;
 use App\Paraula;
 
 if (!isset($_SESSION['user'])) {
-
     header('Location:/login.php');
-
     die();
 }
-$errors = [];
-$succes = 0;
+$errors = []; //errors de formulari
+$succes = 0; // he guanyat
 $ofegat = isset($_SESSION['ofegat'])
     ? unserialize($_SESSION['ofegat'])
     : new Ofegat(Paraula::aleatoria());
